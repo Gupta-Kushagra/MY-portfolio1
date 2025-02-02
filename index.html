@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background: #fff;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            margin: 0 1rem;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #ff0077;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .about-image {
+            flex: 1;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-content {
+            flex: 2;
+        }
+
+        .about-content h1 {
+            font-size: 2rem;
+            color: #333;
+            animation-duration: 1.5s;
+            animation-name: slide-in;
+        }
+        @keyframes slide-in {
+  from {
+    translate: 150vw 0;
+    scale: 200% 1;
+  }
+
+  to {
+    translate: 0 0;
+    scale: 100% 1;
+  }
+}
+
+
+        .about-content h1 span {
+            color: #ff0077;
+        }
+
+        .about-content p {
+            margin: 1rem 0;
+            line-height: 1.6;
+            color: #555;
+            width: 66ch;
+  animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+  white-space: unwrap;
+  overflow: hidden;
+          }
+          @keyframes typing {
+  from {
+    width:0
+  }
+}
+    
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
+}
+        .details {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .details div {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .details i {
+            color: #ff0077;
+        }
+
+        .cv-button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: #ff0077;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        .cv-button:hover {
+            background: #e6006f;
+        }
+
+        .skills-section {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .skills-section h2 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .skill {
+            margin-bottom: 1rem;
+        }
+
+        .skill-name {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+
+        .skill-bar {
+            height: 10px;
+            width: 100%;
+            background: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .skill-bar .skill-level {
+            height: 100%;
+            background: #ff0077;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: right;
+            padding-right: 5px;
+            color: #fff;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .projects-section {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .projects-section h2 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .project {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .tech-stack {
+            margin-top: 0.5rem;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .tech {
+            background: #ff0077;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .project a {
+            text-decoration: none;
+            color: #ff0077;
+            font-size: 0.9rem;
+            margin-right: 1rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .project a:hover {
+            padding: 0.5rem;
+            background: rgba(255, 0, 119, 0.1);
+            border-radius: 5px;
+        }
+
+        .view-link {
+            display: inline-block;
+            padding: 0.3rem 0.6rem;
+            margin-left: 0.5rem;
+            background: #e0e0e0;
+            color: #555;
+            text-decoration: none;
+            font-size: 0.9rem;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .view-link:hover {
+            background: #ff0077;
+            color: #fff;
+        }
+
+        .certifications-section {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .certifications-section h2 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .certification {
+            margin-bottom: 1.5rem;
+            background: #fff;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .certification-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .view-credentials {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: #ff0077;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+
+        .view-credentials:hover {
+            background: #e6006f;
+        }
+        .skill-card {
+            margin-bottom: 1.5rem;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"><span>MY PortFolio</span></div>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#news">News</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <section id="about" class="about-container">
+        <div class="about-image">
+            <img src="photo.jpg" alt="Profile Picture">
+        </div>
+        <div class="about-content">
+            <h1>I&#39;m <span>Kushagra Gupta</span> and <span>I&#39;m an Aspiring SDE</span></h1>
+            <p>Hi! My name is Kushagra Gupta. I am a Web Developer, and I&#39;m very passionate quick learner and dedicated to my work, I have acquired the skills and knowledge necessary to make your project a success with my strong problem solving abilities.</p>
+            <div class="details">
+                <div><i class="fas fa-calendar-alt"></i> Name: Kushagra Gupta</div>
+                <div><i class="fas fa-map-marker-alt"></i> Location: Kanpur, Uttar Pradesh India</div>
+                <div><i class="fas fa-graduation-cap"></i> Study: A.P.J. Abdul Kalam Technical University</div>
+                <div><i class="fas fa-envelope"></i> Mail: kushagragupta9793@gmail.com</div>
+                <div><i class="fas fa-user"></i> Age: 22</div>
+                <div><i class="fas fa-gamepad"></i> Interests: Software Development</div>
+                <div><i class="fas fa-certificate"></i> Degree: B.Tech (Information Technology)</div>
+                <div><i class="fas fa-phone"></i> Phone: +91 9793772772</div>
+            </div>
+            <a href="https://drive.google.com/file/d/1QpkGpgIQTNYxe_62NUlUu9lnZvTBkvYb/view?usp=sharing" class="cv-button">Download CV</a>
+        </div>
+    </section>
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <h2>Skills</h2>
+        <div class="skill">
+            <div class="skill-name">HTML</div>
+            <div class="skill-bar">
+                <div class="skill-level" style="width: 80%;">80%</div>
+            </div>
+        </div>
+        <div class="skill">
+            <div class="skill-name">CSS</div>
+            <div class="skill-bar">
+                <div class="skill-level" style="width: 80%;">80%</div>
+            </div>
+        </div>
+        <div class="skill">
+            <div class="skill-name">JavaScript</div>
+            <div class="skill-bar">
+                <div class="skill-level" style="width: 75%;">75%</div>
+            </div>
+        </div>
+        <div class="skill">
+            <div class="skill-name">TailwindCSS</div>
+            <div class="skill-bar">
+                <div class="skill-level" style="width: 70%;">70%</div>
+            </div>
+            <div class="skill">
+                <div class="skill-name">React.js</div>
+                <div class="skill-bar">
+                    <div class="skill-level" style="width: 70%;">70%</div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">Node.js</div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 67%;">67%</div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-name">MongoDB</div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 55%;">55%</div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name">C/C++</div>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 70%;">70%</div>
+                            </div>
+                            <div class="skill">
+                                <div class="skill-name">Express.js</div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 55%;">55%</div>
+                                </div>
+    </section>
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <h2>Projects</h2>
+        <div class="project">
+            <div class="project-title">
+                Project 1: PassOP-Password Manager App <a href="https://github.com/Gupta-Kushagra/PassOP-Password-Manager-APP">GitHub Repository</a><a href="https://www.hackerrank.com/certificates/243cb7729fe1" class="view-link">View Link</a>
+            </div>
+            <div class="tech-stack">
+                <div class="tech">HTML</div>
+                <div class="tech">CSS</div>
+                <div class="tech">JavaScript</div>
+            </div>
+        </div>
+        <div class="project">
+            <div class="project-title">
+                Project 2:E-Comzy-Shopping cart App <a href="https://github.com/Gupta-Kushagra/shoppingCartApp">GitHub Repository</a><a href="https://shopping-cart-app-silk.vercel.app/" class="view-link">View Link</a>
+            </div>
+            <div class="tech-stack">
+                <div class="tech">React</div>
+                <div class="tech">Node.js</div>
+                <div class="tech">MongoDB</div>
+            </div>
+        </div>
+        <div class="project">
+            <div class="project-title">
+                Project 3: Music Player App <a href="https://github.com/Gupta-Kushagra/Music-Player-App">GitHub Repository</a><a href="https://spotify.freewebhostmost.com/" class="view-link">View Link</a>
+            </div>
+            <div class="tech-stack">
+                <div class="tech">Django</div>
+                <div class="tech">Python</div>
+                <div class="tech">SQLite</div>
+            </div>
+        </div>
+    </section>
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications-section">
+        <h2>Certifications</h2>
+        <div class="certification">
+            <div class="certification-title">Certification 1: Front-End Web Development</div>
+            <a href="https://drive.google.com/file/d/11EnOgsZ9u1m6ZquqH-WSUS9hnSk4OQkK/view" class="view-credentials">View Credentials</a>
+        </div>
+        <div class="certification">
+            <div class="certification-title">Certification 2: Google Cloud CodeLab Completion Prole Badge </div>
+            <a href="https://developers.google.com/profile/u/104055480678128966562" class="view-credentials">View Credentials</a>
+        </div>
+        <div class="certification">
+            <div class="certification-title">Certification 3: AI/ML foundational course YBI Foundation </div>
+            <a href="https://drive.google.com/file/d/1GpKJC3BXy-ElbUExjyy-RiA700Z2D7kd/view" class="view-credentials">View Credentials</a>
+        </div>
+        <div class="certification">
+            <div class="certification-title">Certification 4:HackerRank JavaScript Intermediate Certicate vi</div>
+            <a href="https://www.hackerrank.com/certificates/243cb7729fe1" class="view-credentials">View Credentials</a>
+        </div>
+        <div class="certification">
+            <div class="certification-title">Certification 5:Foundational Principle of Exercising Leadership</div>
+            <a href="https://courses.edx.org/certificates/48706bdf7b0f455f934c01bacf5c7210?_gl=1*ke8g76*_gcl_au*MTk2NDE5MTI5Mi4xNzMzNzMyMzE0*_ga*MTIzMzg4ODI1LjE3MzM3MzIzMDg.*_ga_D3KS4KMDT0*MTczMzczMjMwOC4xLjEuMTczMzczMjQwMC4yOC4wLjA." class="view-credentials">View Credentials</a>
+        </div>
+       
+        </div>
+    </section>
+    <!-- Skill Summary Section -->
+
+<section id="skill-summary" class="skills-section">
+    <h2>Skill Summary</h2>
+    <div class="skill-card">
+        <ul>
+            <li> Full-Stack developer with a strong focus on front-end technologies and expertise in MERN, creating scalable applications.</li>
+            <li> Skilled in optimizing web applications for performance and responsiveness, with a focus on user-centric designs.</li>
+            <li> Leveraged strong problem-solving skills with more than 400+ DSA problems on different platforms. <a href="https://leetcode.com/u/kushagragupta9/">(Leetcode profile)</a></li>
+            <li> Ability to collaborate & lead effectively in team environments, communicate efficiently, and troubleshoot technical challenges.</li>
+            <li> Expertise in React.js, Node.js, Express.js, MongoDB, and using Agile methodologies to deliver high-quality projects on time.</li>
+            <li> Strong foundation in core Computer Science topics such as Data Structures, Object-Oriented Programming, DBMS, etc.</li>
+        </ul>
+    </div>
+</section>
+
+   
+
+</body>
+</html>
